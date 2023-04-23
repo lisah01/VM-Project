@@ -1,4 +1,11 @@
 package OP.Strategy;
 
-public class IncreaseCF {
+import DataStore.*;
+
+public interface IncreaseCF {
+    DataStore getDataStore();
+
+    void setDataStore(DataStore d);
+
+    void IncreaseCF();
 }

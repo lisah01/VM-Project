@@ -1,4 +1,11 @@
 package OP.Strategy;
 
-public class ZeroCF {
+import DataStore.*;
+
+public interface ZeroCF {
+    DataStore getDataStore();
+
+    void setDataStore(DataStore d);
+
+    void ZeroCF();
 }
