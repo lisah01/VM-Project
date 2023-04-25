@@ -14,7 +14,7 @@ public class ReturnCoins2 implements ReturnCoins {
     }
 
     public void ReturnCoins(){
-        System.out.println("Returning coins.\n");
+        System.out.println("ReturnCoins2: Returning coins.\n");
         d.setIntCF(0);
     }
 }

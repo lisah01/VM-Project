@@ -1,3 +1,4 @@
+// This is the Abstract Factory pattern
 package AbstractFactory;
 
 import DataStore.*;

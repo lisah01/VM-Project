@@ -1,3 +1,4 @@
+// This is the driver to interact with the vending machines
 import java.util.Scanner;
 import java.io.*;
 
@@ -8,61 +9,48 @@ import State.*;
 
 
 public class Driver {
-    // methods to check for valid input
 
-    // checks if the user input is an integer, returns -1 if not an integer
-    private static int isInt(String str) {
-        if (str == null) {
-            return -1;
-        }
-        try {
-            return Integer.parseInt(str);
-        } catch (NumberFormatException nfe) {
-            return -1;
-        }
-    }
-
-    // checks if the user input is a fp, returns -1 if not an integer
-    private static float isFloat(String str) {
-        if (str == null) {
-            return -1;
-        }
-        try {
-            return Float.parseFloat(str);
-        } catch (NumberFormatException nfe) {
-            return -1;
-        }
-    }
-
-    // main method
     public static void main(String args[]) throws IOException {
         Scanner scan = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int option;
+        String input = null;
+        char ch = 1;
 
         // loop until a valid vending machine is chosen (1 or 2)
         while (true) {
-            System.out.println("Choose a vending machine:\n");
+            System.out.println("Choose a vending machine:");
             System.out.println("1. Vending Machine 1");
             System.out.println("2. Vending Machine 2");
-            String input = br.readLine();
-            option = isInt(input);
-            if (option == 1 || option == 2) {
-                break;
+            input = br.readLine();
+            try {
+                option = Integer.parseInt(input);
+                if (option == 1 || option == 2) {
+                    break;
+                }
+                else {
+                    System.out.println("Please enter 1 or 2 to choose a vending machine.\n");
+                }
             }
-            else {
+            catch (Exception e){
                 System.out.println("Please enter 1 or 2 to choose a vending machine.\n");
-            } // end if
+                continue;
+            } // end catch
         } // end while
 
+        // vending machine 1 options
         if (option == 1) {
-            // vending machine 1 options
-            VM_1 vm1 = new VM_1();
+            VM1_Factory af1 = new VM1_Factory();
+            DataStore d = af1.getDataStore();
+            OP op = new OP(af1, d);
+            MDA_EFSM m = new MDA_EFSM(op);
+            VM_1 vm1 = new VM_1(m, d);
+
             int p;
             float v;
             int n;
             float x;
-            
+
             System.out.print(" Vending Machine-1");
             System.out.print("\n");
             System.out.print(" MENU of Operations");
@@ -90,16 +78,13 @@ public class Driver {
             System.out.print(" Vending Machine-1 Execution");
             System.out.print("\n");
 
-            char ch = 1;
-            while (ch != 'q')
-            {
+            while (ch != 'q') {
                 System.out.print(" Select Operation: ");
                 System.out.print("\n");
-                System.out.print("0-create,1-coin,2-sugar,3-tea,4-latte,5-insert_cups,6-set_price,7-cancel");
+                System.out.print("0-create,1-coin,2-sugar,3-tea,4-latte,5-insert_cups,6-set_price,7-cancel,q-Quit");
                 System.out.print("\n");
                 ch = scan.next().charAt(0);
-                switch (ch)
-                {
+                switch (ch) {
                     case '0': // create
                         System.out.print(" Operation: create(int p)");
                         System.out.print("\n");
@@ -152,19 +137,29 @@ public class Driver {
                         System.out.print("\n");
                         vm1.cancel();
                         break;
+                    case 'q': // quit
+                        System.out.print("Quitting the Vending Machine Demo\n");
+                        break;
                     default:    // invalid input
                         System.out.println("Please choose an option from the operation menu.\n");
-                }; // end switch
-            }; //end while
-        }
+                        break;
+                } // end switch
+            } //end while
+        } // end if for VM 1 options
 
         if (option == 2) {
             // vending machine 2 options
-            VM_2 vm2 = new VM_2();
+            VM2_Factory af2 = new VM2_Factory();
+            DataStore d = af2.getDataStore();
+            OP op = new OP(af2, d);
+            MDA_EFSM m = new MDA_EFSM(op);
+            VM_2 vm2 = new VM_2(m, d);
+
             float p;
             int v;
             int n;
             int x;
+
             System.out.print(" Vending Machine-2");
             System.out.print("\n");
             System.out.print(" MENU of Operations");
@@ -194,16 +189,13 @@ public class Driver {
             System.out.print(" Vending Machine-2 Execution");
             System.out.print("\n");
 
-            char ch = 1;
-            while (ch != 'q')
-            {
+            while (ch != 'q') {
                 System.out.print(" Select Operation: ");
                 System.out.print("\n");
-                System.out.print("0-create,1-coin,2-sugar,3-tea,4-latte,5-insert_cups,6-set_price,7-cancel");
+                System.out.print("0-CREATE,1-COIN,2-CARD,3-SUGAR,4-CREAM,5-COFFEE,6-InsertCups,7-SetPrice,8-CANCEL,q-Quit");
                 System.out.print("\n");
                 ch = scan.next().charAt(0);
-                switch (ch)
-                {
+                switch (ch) {
                     case '0': // CREATE
                         System.out.print(" Operation: CREATE(float p)");
                         System.out.print("\n");
@@ -223,6 +215,7 @@ public class Driver {
                     case '2': // CARD
                         System.out.print(" Operation: CARD()");
                         System.out.print("\n");
+                        System.out.print(" Enter value of parameter x:\n");
                         x = scan.nextInt();
                         vm2.CARD(x);
                         break;
@@ -263,10 +256,13 @@ public class Driver {
                         System.out.print("\n");
                         vm2.CANCEL();
                         break;
+                    case 'q': // quit
+                        System.out.print("Quitting the Vending Machine Demo\n");
+                        break;
                     default:    // invalid input
                         System.out.println("Please choose an option from the operation menu.\n");
-                }; // end switch
-            }; //end while
-        }
+                } // end switch
+            } //end while
+        } // end if for VM 2 options
     }
 }

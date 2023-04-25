@@ -14,7 +14,7 @@ public class DisposeAdditive1 implements DisposeAdditive{
 
     public void DisposeAdditive(int AL[]) {
         if (AL[0] == 1) {
-            System.out.println("Sugar added to drink.\n");
+            System.out.println("DA1: DISPOSE SUGAR.\n");
         }
     }
 }

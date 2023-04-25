@@ -17,6 +17,6 @@ public class IncreaseCF2 implements IncreaseCF {
         int cf = d.getIntCF();
         int v = d.getTempInt_v();
         d.setIntCF(cf+v);
-        System.out.println("Funds available: " + d.getIntCF());
+        System.out.println("IncreaseCF2: You have " + d.getIntCF() + " funds available.\n");
     }
 }

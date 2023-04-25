@@ -15,10 +15,10 @@ public class DisposeAdditive2 implements DisposeAdditive{
     public void DisposeAdditive(int AL[]) {
         // AL[0] = SUGAR, AL[1] = CREAM
         if (AL[0] == 1) {
-            System.out.println("Sugar added to drink.\n");
+            System.out.println("DA2: DISPOSE SUGAR.\n");
         }
         if (AL[1] == 1){
-            System.out.println("Cream added to drink.\n");
+            System.out.println("DISPOSE CREAM.\n");
         }
     }
 }

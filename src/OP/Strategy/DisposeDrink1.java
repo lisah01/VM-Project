@@ -15,10 +15,10 @@ public class DisposeDrink1 implements DisposeDrink {
 
     public void DisposeDrink(int d) {
         if (d == 0) {
-            System.out.println("Dispose tea.\n");
+            System.out.println("DISPOSE A CUP OF TEA.\n");
         }
         if (d == 1) {
-            System.out.println("Dispose latte.\n");
+            System.out.println("DISPOSE A CUP OF LATTE.\n");
         }
     }
 }

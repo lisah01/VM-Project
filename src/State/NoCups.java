@@ -11,9 +11,9 @@ public class NoCups extends State{
     }
 
     void coin(int p){
-        op.IncreaseCF();
-        op.ReturnCoins();
-        op.ZeroCF();
+        if (p != 0 && p != 1) {
+            op.ReturnCoins();
+        }
     }
 
     void insert_cups(int n){

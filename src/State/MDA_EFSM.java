@@ -9,45 +9,63 @@ public class MDA_EFSM {
     public int AL[];
 
     public MDA_EFSM(OP op){
-        L[0] = new Start(this, op);
-        L[1] = new NoCups(this, op);
-        L[2] = new Idle(this, op);
-        L[3] = new CoinsInserted(this, op);
+        this.L = new State[4];
+        this.L[0] = new Start(this, op);
+        this.L[1] = new NoCups(this, op);
+        this.L[2] = new Idle(this, op);
+        this.L[3] = new CoinsInserted(this, op);
 
         // default start
-        s = L[0];
+        this.s = L[0];
     }
 
     // setter and getter for k
-    protected void setK(int n){
+    public void setK(int n){
         this.k = n;
     }
-    protected int getK(){
+    public int getK(){
         return this.k;
     }
 
     // change states
-    protected void change_state(int state){
+    public void change_state(int state){
         s = L[state];
     }
 
-    protected void create(){}
+    public void create(){
+        s.create();
+    }
 
-    protected void coin(int f){
-        if (f==0){
-            // insufficient funds
-        }
-        else if (f==1){
-            // sufficient funds
+    public void coin(int p){
+        if (s != L[0]){
+            s.coin(2);
         }
         else{
-            System.out.println("Error in MDA-EFSM coin()");
+            s.coin(p);
         }
     }
-    protected void insert_cups(int n){}
-    protected void card(){}
-    protected void set_price(){}
-    protected void dispose_drink(int d){}
-    protected void additive(int a){}
-    protected void cancel(){}
+
+    public void insert_cups(int n){
+        s.insert_cups(n);
+    }
+
+    public void card(){
+        s.card();
+    }
+
+    public void set_price(){
+        s.set_price();
+    }
+
+    public void dispose_drink(int d){
+        s.dispose_drink(d);
+    }
+
+    public void additive(int a){
+        s.additive(a);
+    }
+
+    public void cancel(){
+        s.cancel();
+    }
 }

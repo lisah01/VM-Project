@@ -15,5 +15,6 @@ public class ZeroCF1 implements ZeroCF {
 
     public void ZeroCF(){
         d.setFloatCF(0);
+        System.out.println("ZeroCF1: No funds available.\n");
     }
 }

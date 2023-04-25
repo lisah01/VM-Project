@@ -1,3 +1,4 @@
+// This is the concrete factory for VM 1
 package AbstractFactory;
 
 import DataStore.DataStore;

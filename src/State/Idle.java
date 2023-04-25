@@ -19,7 +19,7 @@ public class Idle extends State{
         }
         else if (p == 1){
             op.IncreaseCF();
-            m.AL = new int[5];
+            m.AL = new int[3];
             m.change_state(3);
         }
 
@@ -33,7 +33,7 @@ public class Idle extends State{
     // create new additive list AL and move to coins inserted state
     void card(){
         op.ZeroCF();
-        m.AL = new int[5];
+        m.AL = new int[3];
         m.change_state(3);
     }
 
@@ -45,7 +45,7 @@ public class Idle extends State{
             System.out.println(m.getK() + " cups available\n");
         }
         else {
-            System.out.println("Not enough cups. Insert cups to continue.\n");
+            System.out.println("No cups inserted.\n");
         }
     }
 

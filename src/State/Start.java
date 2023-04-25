@@ -11,8 +11,8 @@ public class Start extends State{
     }
     void create(){
         op.StorePrice();
-        m.setK(0);
         m.change_state(1);
+        m.setK(0);
     }
 
 }
