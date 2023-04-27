@@ -17,6 +17,5 @@ public class StorePrice1 implements StorePrice {
         float price = d.getTemp_p();
         d.setPrice(price);
         System.out.println("StorePrice1: PRICE SET TO " + d.getPrice());
-        System.out.println("\n");
     }
 }

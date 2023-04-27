@@ -3,18 +3,9 @@ package OP.Strategy;
 import DataStore.DataStore;
 
 public class DisposeAdditive1 implements DisposeAdditive{
-    private DataStore d;
-    public DataStore getDataStore(){
-        return this.d;
-    }
-
-    public void setDataStore(DataStore d){
-        this.d = d;
-    }
-
     public void DisposeAdditive(int AL[]) {
-        if (AL[0] == 1) {
-            System.out.println("DA1: DISPOSE SUGAR.\n");
+        if (AL[1] == 1) {
+            System.out.println("DISPOSE SUGAR (DisposeAdditive1 class)");
         }
     }
 }

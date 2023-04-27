@@ -1,3 +1,4 @@
+// This is the output processor
 package OP;
 
 import AbstractFactory.*;
@@ -14,7 +15,7 @@ public class OP {
     private DisposeDrink a5;
     private DisposeAdditive a6;
 
-    // constructor to initialize Abstract Factory
+    // constructor to initialize OP with known AF
     public OP(AbstractFactory af, DataStore d){
         this.af = af;
         this.d = d;
@@ -42,26 +43,15 @@ public class OP {
     }
 
     public void ReturnCoins(){
-        this.a4.setDataStore(this.d);
         this.a4.ReturnCoins();
     }
 
     public void DisposeDrink(int d){
-        this.a5.setDataStore(this.d);
         this.a5.DisposeDrink(d);
     }
 
     public void DisposeAdditive(int AL[]){
-        this.a6.setDataStore(this.d);
         this.a6.DisposeAdditive(AL);
-    }
-
-    public AbstractFactory getAbstractFactory(){
-        return this.af;
-    }
-
-    public void setAbstractFactory(AbstractFactory af){
-        this.af = af;
     }
 
     public DataStore getDataStore(){

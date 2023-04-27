@@ -8,6 +8,7 @@ public class Start extends State{
     public Start(MDA_EFSM m, OP op){
         this.m = m;
         this.op = op;
+        this.id = "Start State";
     }
     void create(){
         op.StorePrice();

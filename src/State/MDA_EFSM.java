@@ -1,10 +1,11 @@
+// This is the MDA-EFSM and the context class of the state pattern
 package State;
 
 import OP.*;
 
 public class MDA_EFSM {
     private State s;
-    private State[] L = new State[4];
+    private State[] L;
     private int k = 0;
     public int AL[];
 
@@ -30,6 +31,7 @@ public class MDA_EFSM {
     // change states
     public void change_state(int state){
         s = L[state];
+        System.out.println("Current state: " + s.id + "\n");
     }
 
     public void create(){
@@ -37,12 +39,7 @@ public class MDA_EFSM {
     }
 
     public void coin(int p){
-        if (s != L[0]){
-            s.coin(2);
-        }
-        else{
             s.coin(p);
-        }
     }
 
     public void insert_cups(int n){

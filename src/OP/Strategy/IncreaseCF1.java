@@ -16,7 +16,7 @@ public class IncreaseCF1 implements IncreaseCF {
     public void IncreaseCF(){
         float cf = d.getFloatCF();
         float v = d.getTempFloat_v();
-        d.setFloatCF(cf+v);
-        System.out.println("IncreaseCF1: You have " + d.getFloatCF() + " funds available.\n");
+        d.setFloatCF(cf + v);
+        System.out.println(d.getFloatCF() + " coins available.");
     }
 }

@@ -8,6 +8,7 @@ public class Idle extends State{
     public Idle(MDA_EFSM m, OP op){
         this.m = m;
         this.op = op;
+        this.id = "Idle State";
     }
 
     // if p == 0, not enough coins
@@ -15,6 +16,7 @@ public class Idle extends State{
     void coin(int p){
         if (p == 0){
             System.out.println("Not enough coins\n");
+            System.out.println("Current State: " + id + "\n");
             op.IncreaseCF();
         }
         else if (p == 1){
@@ -39,6 +41,7 @@ public class Idle extends State{
 
     // insert n cups
     void insert_cups(int n){
+        System.out.println("Current State: " + id + "\n");
         // if n > 0, k+=n
         if (n > 0) {
             m.setK(m.getK() + n);       // add to existing cups
