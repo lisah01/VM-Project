@@ -1,6 +1,6 @@
 package State;
 
-import OP.*;
+import OP_Strategy.*;
 
 public class NoCups extends State {
 
@@ -11,7 +11,8 @@ public class NoCups extends State {
         this.id = "NoCups State";
     }
 
-    void coin(int p) {
+    public void coin(int p) {
+        System.out.println("***NoCups->coin(p)***");
         op.IncreaseCF();
         System.out.println("Not enough cups. Try again after inserting cups.");
         op.ReturnCoins();
@@ -19,7 +20,8 @@ public class NoCups extends State {
         System.out.println("Current State: " + id + "\n");
     }
 
-    void insert_cups(int n) {
+    public void insert_cups(int n) {
+        System.out.println("***NoCups->insert_cups(n)***");
         // if n > 0, k=n; ZeroCF
         if (n > 0) {
             m.setK(n);

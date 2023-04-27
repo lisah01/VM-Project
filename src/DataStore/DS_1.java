@@ -9,41 +9,43 @@ public class DS_1 extends DataStore {
     private float cf;
 
     // getters and setters for DS_1
-    public float getTemp_p(){
+    public float getTemp_p() {
+        System.out.println("***DS_1->getTemp_p***");
         return this.temp_p;
     }
 
-    public void setTemp_p(float p){
+    public void setTemp_p(float p) {
+        System.out.println("***DS_1->setTemp_p***");
         this.temp_p = p;
     }
 
-    public float getTempFloat_v(){
+    public float getTempFloat_v() {
+        System.out.println("***DS_1->getTemp_v***");
         return this.temp_v;
     }
 
-    public void setTempFloat_v(float v){
+    public void setTempFloat_v(float v) {
+        System.out.println("***DS_1->setTemp_p***");
         this.temp_v = v;
     }
 
-    public float getPrice(){
+    public float getPrice() {
+        System.out.println("***DS_1->getPrice***");
         return this.price;
     }
 
-    public void setPrice(float price){
+    public void setPrice(float price) {
+        System.out.println("***DS_1->setPrice***");
         this.price = price;
     }
 
-    public float getFloatCF(){
+    public float getFloatCF() {
+        System.out.println("***DS_1->getFloatCF***");
         return this.cf;
     }
 
-    public void setFloatCF(float cf){
+    public void setFloatCF(float cf) {
+        System.out.println("***DS_1->setFloatCF***");
         this.cf = cf;
     }
-
-    // not applicable to DS_1
-    public int getTempInt_v(){return -1;}
-    public void setTempInt_v(int v){}
-    public int getIntCF(){return -1;}
-    public void setIntCF(int cf){};
 }

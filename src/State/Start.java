@@ -1,6 +1,6 @@
 package State;
 
-import OP.*;
+import OP_Strategy.*;
 
 public class Start extends State{
 
@@ -10,9 +10,11 @@ public class Start extends State{
         this.op = op;
         this.id = "Start State";
     }
-    void create(){
+    public void create(){
+        System.out.println("***Start->create()***");
         op.StorePrice();
         m.change_state(1);
+        // reset cups
         m.setK(0);
     }
 

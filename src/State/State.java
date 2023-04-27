@@ -1,6 +1,6 @@
 package State;
 
-import OP.*;
+import OP_Strategy.*;
 
 public abstract class State {
     MDA_EFSM m;
@@ -8,12 +8,12 @@ public abstract class State {
     // id for identifying current state
     String id;
 
-    void create(){}
-    void coin(int p){}
-    void insert_cups(int n){}
-    void card(){}
-    void set_price(){}
-    void dispose_drink(int d){}
-    void additive(int a){}
-    void cancel(){}
+    public void create(){}
+    public void coin(int p){}
+    public void insert_cups(int n){}
+    public void card(){}
+    public void set_price(){}
+    public void dispose_drink(int d){}
+    public void additive(int a){}
+    public void cancel(){}
 }

@@ -1,6 +1,6 @@
 package State;
 
-import OP.*;
+import OP_Strategy.*;
 
 public class Idle extends State{
 
@@ -13,7 +13,8 @@ public class Idle extends State{
 
     // if p == 0, not enough coins
     // if p == 1, create new additive list AL and move to coins inserted state
-    void coin(int p){
+    public void coin(int p){
+        System.out.println("***Idle->coin(p)***");
         if (p == 0){
             System.out.println("Not enough coins\n");
             System.out.println("Current State: " + id + "\n");
@@ -28,19 +29,22 @@ public class Idle extends State{
     }
 
     // store price
-    void set_price(){
+    public void set_price(){
+        System.out.println("***Idle->set_price()***");
         op.StorePrice();
     }
 
     // create new additive list AL and move to coins inserted state
-    void card(){
-        op.ZeroCF();
+    public void card(){
+        System.out.println("***Idle->card()***");
+        System.out.println("Value deducted from card.");
         m.AL = new int[3];
         m.change_state(3);
     }
 
     // insert n cups
-    void insert_cups(int n){
+    public void insert_cups(int n){
+        System.out.println("***Idle->insert_cups(n)***");
         System.out.println("Current State: " + id + "\n");
         // if n > 0, k+=n
         if (n > 0) {
@@ -51,5 +55,4 @@ public class Idle extends State{
             System.out.println("No cups inserted.\n");
         }
     }
-
 }

@@ -2,14 +2,14 @@
 package AbstractFactory;
 
 import DataStore.*;
-import OP.Strategy.*;
+import OP_Strategy.Strategy.*;
 
 public interface AbstractFactory {
     DataStore getDataStore();
 
     StorePrice getStorePrice();
 
-    ZeroCF getZeroCf();
+    ZeroCF getZeroCF();
 
     IncreaseCF getIncreaseCF();
 
