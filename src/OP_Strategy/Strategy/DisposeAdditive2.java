@@ -1,12 +1,13 @@
-package OP.Strategy;
+package OP_Strategy.Strategy;
 
 public class DisposeAdditive2 implements DisposeAdditive{
     public void DisposeAdditive(int AL[]) {
-        // AL[1] = SUGAR, AL[2] = CREAM
-        if (AL[1] == 1) {
+        System.out.println("***DisposeAdditive2->DisposeAdditive(int AL[])***");
+        // AL[0] = SUGAR, AL[1] = CREAM
+        if (AL[0] == 1) {
             System.out.println("DISPOSE SUGAR (DisposeAdditive2 class)");
         }
-        if (AL[2] == 1){
+        if (AL[1] == 1){
             System.out.println("DISPOSE CREAM");
         }
     }

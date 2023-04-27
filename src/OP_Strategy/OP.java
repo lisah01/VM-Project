@@ -1,9 +1,9 @@
 // This is the output processor
-package OP;
+package OP_Strategy;
 
 import AbstractFactory.*;
 import DataStore.*;
-import OP.Strategy.*;
+import OP_Strategy.Strategy.*;
 
 public class OP {
     private AbstractFactory af;
@@ -18,47 +18,41 @@ public class OP {
     // constructor to initialize OP with known AF
     public OP(AbstractFactory af, DataStore d){
         this.af = af;
-        this.d = d;
         this.a1 = af.getStorePrice();
-        this.a2 = af.getZeroCf();
+        this.a2 = af.getZeroCF();
         this.a3 = af.getIncreaseCF();
         this.a4 = af.getReturnCoins();
         this.a5 = af.getDisposeDrink();
         this.a6 = af.getDisposeAdditive();
+        this.d = d;
     }
 
     public void StorePrice(){
-        this.a1.setDataStore(this.d);
-        this.a1.StorePrice();
+        System.out.println("***OP->StorePrice()***");
+        this.a1.StorePrice(d);
     }
 
     public void ZeroCF(){
-        this.a2.setDataStore(this.d);
-        this.a2.ZeroCF();
+        System.out.println("***OP->ZeroCF()***");
+        this.a2.ZeroCF(d);
     }
 
     public void IncreaseCF(){
-        this.a3.setDataStore(this.d);
-        this.a3.IncreaseCF();
+        System.out.println("***OP->IncreaseCF()***");
+        this.a3.IncreaseCF(d);
     }
 
     public void ReturnCoins(){
+        System.out.println("***OP->ReturnCoins()***");
         this.a4.ReturnCoins();
     }
 
-    public void DisposeDrink(int d){
-        this.a5.DisposeDrink(d);
+    public void DisposeDrink(int drink){
+        System.out.println("***OP->DisposeDrink(drink)***");
+        this.a5.DisposeDrink(drink);
     }
 
     public void DisposeAdditive(int AL[]){
         this.a6.DisposeAdditive(AL);
-    }
-
-    public DataStore getDataStore(){
-        return this.d;
-    }
-
-    public void setDataStore(DataStore d){
-        this.d = d;
     }
 }
