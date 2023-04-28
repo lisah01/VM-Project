@@ -2,18 +2,18 @@
 package OP_Strategy;
 
 import AbstractFactory.*;
-import DataStore.*;
 import OP_Strategy.Strategy.*;
+import DataStore.*;
 
 public class OP {
     private AbstractFactory af;
-    private DataStore d;
     private StorePrice a1;
     private ZeroCF a2;
     private IncreaseCF a3;
     private ReturnCoins a4;
     private DisposeDrink a5;
     private DisposeAdditive a6;
+    private DataStore d;
 
     // constructor to initialize OP with known AF
     public OP(AbstractFactory af, DataStore d){
@@ -53,6 +53,7 @@ public class OP {
     }
 
     public void DisposeAdditive(int AL[]){
+        System.out.println("***OP->DisposeAdditive(AL[])***");
         this.a6.DisposeAdditive(AL);
     }
 }

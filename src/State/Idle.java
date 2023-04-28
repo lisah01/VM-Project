@@ -15,13 +15,12 @@ public class Idle extends State{
     // if p == 1, create new additive list AL and move to coins inserted state
     public void coin(int p){
         System.out.println("***Idle->coin(p)***");
+        op.IncreaseCF();
         if (p == 0){
             System.out.println("Not enough coins\n");
             System.out.println("Current State: " + id + "\n");
-            op.IncreaseCF();
         }
         else if (p == 1){
-            op.IncreaseCF();
             m.AL = new int[3];
             m.change_state(3);
         }

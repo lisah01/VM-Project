@@ -13,10 +13,8 @@ public class NoCups extends State {
 
     public void coin(int p) {
         System.out.println("***NoCups->coin(p)***");
-        op.IncreaseCF();
         System.out.println("Not enough cups. Try again after inserting cups.");
         op.ReturnCoins();
-        op.ZeroCF();
         System.out.println("Current State: " + id + "\n");
     }
 

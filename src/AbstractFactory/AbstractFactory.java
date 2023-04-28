@@ -1,4 +1,4 @@
-// This is the Abstract Factory pattern
+// This is the Abstract Factory pattern interface
 package AbstractFactory;
 
 import DataStore.*;

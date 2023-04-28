@@ -98,7 +98,7 @@ public class Driver {
                         System.out.print("\n");
                         System.out.print(" Enter value of parameter v:");
                         System.out.print("\n");
-                        v = scan.nextInt();
+                        v = scan.nextFloat();
                         vm1.coin(v);
                         break;
                     case '2': // sugar

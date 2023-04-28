@@ -21,7 +21,6 @@ public class CoinsInserted extends State{
     // cancel current interaction
     public void cancel(){
         System.out.println("***CoinsInserted->cancel()***");
-        op.IncreaseCF();
         op.ReturnCoins();
         op.ZeroCF();
         m.change_state(2);              // move back to idle state
@@ -30,17 +29,16 @@ public class CoinsInserted extends State{
     // dispose a drink
     public void dispose_drink(int d){
         System.out.println("***CoinsInserted->dispose_drink(d))***");
-        if (m.getK() > 1) {
-            op.DisposeDrink(d);
-            op.DisposeAdditive(m.AL);
-            m.setK(m.getK() - 1);       // reduce cups
+        op.DisposeDrink(d);
+        op.DisposeAdditive(m.AL);       // prints appropriate additive messages
+        int cups = m.getK();
+        if (cups > 1) {
+            m.setK(cups - 1);           // reduce cups
             op.ZeroCF();                // disposing drink consumes all coins
-            System.out.println(m.getK() + " cups remaining.\n");
+            System.out.println(cups-1 + " cups remaining.\n");
             m.change_state(2);          // move back to idle state
         }
-        else if (m.getK() <= 1){
-            op.DisposeDrink(d);
-            op.DisposeAdditive(m.AL);   // prints appropriate additive messages
+        else if (cups <= 1){
             op.ZeroCF();
             m.change_state(1);          // out of cups, move to no cups state
         }

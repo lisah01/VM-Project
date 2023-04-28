@@ -15,17 +15,17 @@ public class DS_1 extends DataStore {
     }
 
     public void setTemp_p(float p) {
-        System.out.println("***DS_1->setTemp_p***");
+        System.out.println("***DS_1->setTemp_p(p)***");
         this.temp_p = p;
     }
 
     public float getTempFloat_v() {
-        System.out.println("***DS_1->getTemp_v***");
+        System.out.println("***DS_1->getTempFloat_v***");
         return this.temp_v;
     }
 
     public void setTempFloat_v(float v) {
-        System.out.println("***DS_1->setTemp_p***");
+        System.out.println("***DS_1->setTempFloat_v(v)***");
         this.temp_v = v;
     }
 
@@ -35,7 +35,7 @@ public class DS_1 extends DataStore {
     }
 
     public void setPrice(float price) {
-        System.out.println("***DS_1->setPrice***");
+        System.out.println("***DS_1->setPrice(price)***");
         this.price = price;
     }
 
@@ -45,7 +45,7 @@ public class DS_1 extends DataStore {
     }
 
     public void setFloatCF(float cf) {
-        System.out.println("***DS_1->setFloatCF***");
+        System.out.println("***DS_1->setFloatCF(cf)***");
         this.cf = cf;
     }
 }

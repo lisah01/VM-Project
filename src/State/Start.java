@@ -10,6 +10,7 @@ public class Start extends State{
         this.op = op;
         this.id = "Start State";
     }
+
     public void create(){
         System.out.println("***Start->create()***");
         op.StorePrice();

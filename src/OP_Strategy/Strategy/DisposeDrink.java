@@ -1,5 +1,5 @@
 package OP_Strategy.Strategy;
 
 public interface DisposeDrink {
-    void DisposeDrink(int d);
+    void DisposeDrink(int drink);
 }

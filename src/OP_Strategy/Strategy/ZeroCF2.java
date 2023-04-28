@@ -4,7 +4,7 @@ import DataStore.DataStore;
 
 public class ZeroCF2 implements ZeroCF {
     public void ZeroCF(DataStore d){
-        System.out.println("***ZeroCF2->ZeroCF(d)***");
+        System.out.println("***ZeroCF2->ZeroCF(DS d)***");
         d.setFloatCF(0);
         System.out.println("No funds available.\n");
     }

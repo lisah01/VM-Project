@@ -1,4 +1,4 @@
-// This is the abstract datastore
+// This is the parent datastore
 package DataStore;
 
  public abstract class DataStore {

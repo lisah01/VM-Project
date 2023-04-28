@@ -9,6 +9,7 @@ public class MDA_EFSM {
     private int k = 0;
     public int AL[];
 
+    // constructor to define the states
     public MDA_EFSM(OP op){
         this.L = new State[4];
         this.L[0] = new Start(this, op);
@@ -18,16 +19,6 @@ public class MDA_EFSM {
 
         // default start
         this.s = L[0];
-    }
-
-    // setter and getter for k
-    public void setK(int n){
-        System.out.println("***MDA-EFSM->setK(n)***");
-        this.k = n;
-    }
-    public int getK(){
-        System.out.println("***MDA-EFSM->getK()***");
-        return this.k;
     }
 
     // change states - decentralized so states will call for change of state
@@ -75,5 +66,15 @@ public class MDA_EFSM {
     public void cancel(){
         System.out.println("***MDA-EFSM->cancel()***");
         s.cancel();
+    }
+
+    // setter and getter for k
+    public void setK(int n){
+        System.out.println("***MDA-EFSM->setK(n)***");
+        this.k = n;
+    }
+    public int getK(){
+        System.out.println("***MDA-EFSM->getK()***");
+        return this.k;
     }
 }
